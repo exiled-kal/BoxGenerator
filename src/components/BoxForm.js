@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 const BoxForm = (props) => {
     const [box, setBox] = useState("");
 
-    const handleSubmit = (e) => {
+    const onSubmit = (e) => {
         e.preventDefault();
-        props.NewBox(box);
+        props.onNewBox(box);
     };
 
     return(
-        <form onSubmit={ handleSubmit }>
+        <form onSubmit={ onSubmit }>
             <div>
                 <label htmlFor="box">Color </label> 
                 <input onChange={ (e) => setBox(e.target.value) } type="text" />

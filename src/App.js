@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
 import BoxForm from './components/BoxForm';
-import './App.css';
+import BoxDisplay from './components/BoxDisplay';
 
 function App() {
-  const [currBox, setCurrBox] = useState("");
-    
-  const getBox = (newBox) => {
-    setCurrBox(newBox);
-  }
-
-  return (
-    <div className="App">
+  const [currentBox, setCurrentBox] = useState("");
+  
+    const gottaBox = ( newBox ) => {
+        setCurrentBox( newBox );
+    }
+  
+    return (
       <>
-      <BoxForm newBox={getBox}/>
+        <BoxForm onNewBox={ gottaBox } />
+        
+        <BoxDisplay bgColor="red" />
+        <BoxDisplay bgColor="blue" />
+        
       </>
-    </div>
-  );
+    );
 }
 
 export default App;
